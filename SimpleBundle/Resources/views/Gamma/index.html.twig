@@ -1,0 +1,39 @@
+{% extends 'basesimple.html.twig' %}
+
+{% block body %}
+    <h1>Gammas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gamma in gammas %}
+            <tr>
+                <td><a href="{{ path('Jus_Simple_gamma_show', { 'id': gamma.id }) }}">{{ gamma.id }}</a></td>
+                <td>{{ gamma.title }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('Jus_Simple_gamma_show', { 'id': gamma.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('Jus_Simple_gamma_edit', { 'id': gamma.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('Jus_Simple_gamma_new') }}">Create a new gamma</a>
+        </li>
+    </ul>
+{% endblock %}

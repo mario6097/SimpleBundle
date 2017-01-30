@@ -1,0 +1,39 @@
+{% extends 'basesimple.html.twig' %}
+
+{% block body %}
+    <h1>Betas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for betum in betas %}
+            <tr>
+                <td><a href="{{ path('Jus_Simple_beta_show', { 'id': betum.id }) }}">{{ betum.id }}</a></td>
+                <td>{{ betum.title }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('Jus_Simple_beta_show', { 'id': betum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('Jus_Simple_beta_edit', { 'id': betum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('Jus_Simple_beta_new') }}">Create a new betum</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'basesimple.html.twig' %}
+
+{% block body %}
+    <h1>Alphas list</h1>
+{% if alphas %}
+    <ul>
+        {% for alpha in alphas %}
+            <ul>
+                <li> <a href="{{ path('Jus_Simple_alpha_show', { 'id': alpha.id }) }}">{{ alpha.id }}</a> &nbsp; {{ alpha.title }}
+                 {% if alpha.betas %} <ul> {% for beta in alpha.betas %} <li> {{ beta.title|join(', ') }}  </li>
+				{% if beta.gammas %}  <ul> {% for gamma in beta.gammas %} <li>{{ gamma.title|join(', ') }}   </li> {% endfor %} </ul> {% endif %} 
+               					{% endfor %} </ul> {% endif %}     <br> 
+                    
+                            <a href="{{ path('Jus_Simple_alpha_show', { 'id': alpha.id }) }}">show {{ alpha.id }}</a>
+                       &nbsp; 
+                            <a href="{{ path('Jus_Simple_alpha_edit', { 'id': alpha.id }) }}">edit {{ alpha.id }}</a>
+                       
+                </li>
+            </ul>
+        {% endfor %}
+</ul>
+{% endif %} 
+    <ul>
+        <li>
+            <a href="{{ path('Jus_Simple_alpha_new') }}">Create a new alpha</a>
+        </li>
+    </ul>
+{% endblock %}

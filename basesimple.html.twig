@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	{% block stylesheets %}
+<link rel="stylesheet" type="text/css"  href="{{ asset('bundles/css/Simple/formStyle.css') }}"  media="all" />
+	{% endblock %}
+
+	{% block javascripts %}  
+<script src="{{ asset('bundles/js/simple/jquery-3.1.1.js') }}" type="text/javascript"> </script>  
+	{% endblock %}
+
+{% block localcss %}{% endblock %}
+{% block localjs %}{% endblock %}
+<title>To Learn Symfony2</title>
+</head>
+<body {% block  bodyattr -%}   {% endblock %} >
+  <div id="page-wrap"> 	
+<div id="header">
+ {% block header %}Welcome{% endblock %}
+</div>
+<h1 class="title"> {% block title %}TEST NESTED FORMS{% endblock %} </h1>
+
+{% block body %}{% endblock %}
+ 
+
+        <div id="footer">
+	  {% block footer %}<a href="http://www.symfony.com">developed thanks to SYMFONY</a> {% endblock %}
+		</div>
+
+</div> <!-- close page-wrap -->
+	</body>
+</html>
+
