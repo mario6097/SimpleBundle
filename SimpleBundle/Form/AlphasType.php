@@ -26,7 +26,7 @@ class AlphasType extends AbstractType
                     'prototype' => true,
                     'prototype_name' => '__alpha_prot__'
                ))
-              ->add('Save', SubmitType::class, array('attr' => array('class' => 'save')))       
+            //  ->add('Save', SubmitType::class, array('attr' => array('class' => 'save')))       
 			;
     }
     
